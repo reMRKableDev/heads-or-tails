@@ -43,6 +43,21 @@ h2 {
   height: 300px;
 }
 
+#player,
+#computer {
+  display: inline;
+  margin: 25px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+
 .animate {
   background: url("../assets/heads.png");
   width: 227px;
@@ -72,19 +87,4 @@ h2 {
   100% {
     background: url("../assets/heads.png");
   }
-}
-
-#player,
-#computer {
-  display: inline;
-  margin: 25px;
-  font-size: 20px;
-}
-
-button {
-  font-size: 18px;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  outline: none;
 }
