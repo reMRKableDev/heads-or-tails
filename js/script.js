@@ -9,6 +9,7 @@ let computerScore = 0;
 function displaySelections(user, computer) {
   const playerSelection = document.querySelector("#player-selection");
   const computerSelection = document.querySelector("#computer-selection");
+
   if (user === "heads") {
     playerSelection.style.color = "#edf2f4";
     playerSelection.style.backgroundColor = "#007ea7";
@@ -29,6 +30,7 @@ function displaySelections(user, computer) {
     computerSelection.style.backgroundColor = "#e9df00";
     computerSelection.style.padding = "0 3px";
   }
+
   playerSelection.innerHTML = `${user}`;
   computerSelection.innerHTML = `${computer}`;
 }
@@ -97,6 +99,10 @@ buttons.forEach(function (button) {
     } else {
       userPick = 0;
     }
+
+    console.log("random", random);
+    console.log("comp", computerSelection);
+    console.log("user", userSelection);
 
     //displays the player and computer's selection
     //in the Selected portion of DOM
