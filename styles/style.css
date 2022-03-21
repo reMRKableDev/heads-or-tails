@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&family=Righteous&display=swap");
+
+body {
+  width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-family: "Righteous", cursive;
+}
+
+.game-canvas {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.5em;
+}
+
+.title {
+  margin: 5px 0;
+  border-bottom: 1px solid #000;
+}
+
+.title h1,
+.title p {
+  margin: 2px 0;
+}
+
+.selection {
+  display: inline;
+  font-size: 18px;
+}
+
+#center {
+  width: 227px;
+  margin: 5px auto;
+}
+
+#image {
+  background: url("../assets/heads.png");
+  width: inherit;
+  height: 300px;
+}
+
+.animate {
+  background: url("../assets/heads.png");
+  width: 227px;
+  height: 300px;
+  animation-name: spin;
+  animation-iteration-count: 2;
+  animation-duration: 1s;
+}
+
+@keyframes spin {
+  0% {
+    background: url("../assets/heads.png");
+  }
+
+  25% {
+    background: url("../assets/tails.png");
+  }
+
+  50% {
+    background: url("../assets/heads.png");
+  }
+
+  75% {
+    background: url("../assets/tails.png");
+  }
+
+  100% {
+    background: url("../assets/heads.png");
+  }
+}
+
+#player,
+#computer {
+  display: inline;
+  margin: 25px;
+  font-size: 20px;
+}
+
+button {
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}

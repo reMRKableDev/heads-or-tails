@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Heads Or Tails</title>
+  </head>
+  <body>
+    <main class="game-canvas">
+      <header class="title">
+        <h1>Heads Or Tails</h1>
+        <p>First to 5 points is the winner!</p>
+      </header>
+
+      <section class="selection">
+        <p>Player Selected: <span id="player-selection"></span></p>
+        <p>Computer Selected: <span id="computer-selection"></span></p>
+      </section>
+
+      <section id="center">
+        <div id="winner"></div>
+        <div id="image"></div>
+      </section>
+
+      <section>
+        <div id="player">Player: <span id="player-score">0</span></div>
+        <div id="computer">Computer: <span id="computer-score">0</span></div>
+      </section>
+
+      <div>
+        <h2>Make a Selection</h2>
+        <button id="heads">Heads</button>
+        <button id="tails">Tails</button>
+      </div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
