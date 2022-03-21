@@ -10,16 +10,24 @@ function displaySelections(user, computer) {
   const playerSelection = document.querySelector("#player-selection");
   const computerSelection = document.querySelector("#computer-selection");
   if (user === "heads") {
-    playerSelection.style.color = "green";
+    playerSelection.style.color = "#edf2f4";
+    playerSelection.style.backgroundColor = "#007ea7";
+    playerSelection.style.padding = "0 3px";
   }
   if (user === "tails") {
-    playerSelection.style.color = "blue";
+    playerSelection.style.color = "#edf2f4";
+    playerSelection.style.backgroundColor = "#e9df00";
+    playerSelection.style.padding = "0 3px";
   }
   if (computer === "heads") {
-    computerSelection.style.color = "green";
+    computerSelection.style.color = "#edf2f4";
+    computerSelection.style.backgroundColor = "#007ea7";
+    computerSelection.style.padding = "0 3px";
   }
   if (computer === "tails") {
-    computerSelection.style.color = "blue";
+    computerSelection.style.color = "#edf2f4";
+    computerSelection.style.backgroundColor = "#e9df00";
+    computerSelection.style.padding = "0 3px";
   }
   playerSelection.innerHTML = `${user}`;
   computerSelection.innerHTML = `${computer}`;
@@ -86,7 +94,7 @@ buttons.forEach(function (button) {
 
     if (userSelection === "heads") {
       userPick = 1;
-    } else if (userSelection === "tails") {
+    } else {
       userPick = 0;
     }
 

@@ -14,25 +14,29 @@
         <p>First to 5 points is the winner!</p>
       </header>
 
-      <section class="selection">
+      <section class="selection-container">
         <p>Player Selected: <span id="player-selection"></span></p>
         <p>Computer Selected: <span id="computer-selection"></span></p>
       </section>
 
-      <section id="center">
+      <section class="asset-container">
         <div id="winner"></div>
-        <div id="image"></div>
+        <figure>
+          <div id="image"></div>
+        </figure>
       </section>
 
-      <section>
+      <section class="score-container">
         <p id="player">Player: <span id="player-score">0</span></p>
         <p id="computer">Computer: <span id="computer-score">0</span></p>
       </section>
 
-      <section>
+      <section class="choice-container">
         <h2>Make a Selection</h2>
-        <button id="heads">Heads</button>
-        <button id="tails">Tails</button>
+        <div>
+          <button id="heads">Heads</button>
+          <button id="tails">Tails</button>
+        </div>
       </section>
     </main>
     <script src="./js/script.js"></script>

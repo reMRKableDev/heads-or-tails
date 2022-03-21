@@ -1,8 +1,47 @@
+/* Import external fonts from Google*/
 @import url("https://fonts.googleapis.com/css2?family=Raleway&family=Righteous&display=swap");
 
+/* Set up root variables */
+:root {
+  --brand-oxford-blue: #011638;
+  --brand-cultured: #edf2f4;
+  --brand-indian-red: #db5461;
+  --brand-titanium-yellow: #e9df00;
+  --brand-celadon-blue: #007ea7;
+
+  --brand-mb: 15px;
+}
+
+/* Reset the default styling of the browser. Only for more control*/
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
-  width: 800px;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
+  background-color: var(--brand-cultured);
+}
+
+img,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
   padding: 0;
 }
 
@@ -11,57 +50,117 @@ h2 {
   font-family: "Righteous", cursive;
 }
 
+p {
+  font-family: "Raleway", sans-serif;
+}
+
+/* Classes and id styling*/
 .game-canvas {
   text-align: center;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.5em;
 }
 
 .title {
-  margin: 5px 0;
-  border-bottom: 1px solid #000;
+  background-color: var(--brand-oxford-blue);
+  color: var(--brand-cultured);
+  padding: 15px 0;
+  margin-bottom: var(--brand-mb);
 }
 
-.title h1,
-.title p {
-  margin: 2px 0;
+.title > h1 {
+  margin-bottom: var(--brand-mb);
+  font-size: clamp(2rem, 10vw, 2.5rem);
 }
 
-.selection {
-  display: inline;
-  font-size: 18px;
+.title > p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
 }
 
-#center {
-  width: 227px;
-  margin: 5px auto;
+.selection-container,
+.score-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.selection-container > p,
+.score-container > p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
+  margin-bottom: var(--brand-mb);
+  flex: 1;
+}
+
+.asset-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.asset-container > figure {
+  width: 8rem;
+  height: 8rem;
+}
+
+.asset-container > #winner {
+  color: var(--brand-indian-red);
 }
 
 #image {
-  background: url("../assets/heads.png");
-  width: inherit;
-  height: 300px;
+  background-image: url("../assets/heads.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
-#player,
-#computer {
-  display: inline;
-  margin: 25px;
-  font-size: 20px;
+.choice-container > h2 {
+  margin-bottom: var(--brand-mb);
+  font-size: clamp(1.5rem, 10vw, 2rem);
 }
 
-button {
-  font-size: 18px;
-  border: none;
+.choice-container > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: var(--brand-mb);
+}
+
+.choice-container > div > button {
+  font-size: clamp(1rem, 2.5vw, 1.1rem);
   border-radius: 5px;
   padding: 10px;
   outline: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  font-family: "Raleway", sans-serif;
+  width: 80%;
+}
+
+.choice-container > div > button:hover {
+  border: 2px solid black;
+  box-shadow: 0 5px 6px 0 #999;
+}
+
+.choice-container > div > button:nth-child(1) {
+  background-color: var(--brand-celadon-blue);
+  border: 2px solid var(--brand-celadon-blue);
+  color: var(--brand-cultured);
+}
+
+.choice-container > div > button:nth-child(2) {
+  background-color: var(--brand-titanium-yellow);
+  border: 2px solid var(--brand-titanium-yellow);
+  color: var(--brand-cultured);
 }
 
 .animate {
-  background: url("../assets/heads.png");
-  width: 227px;
-  height: 300px;
+  background-image: url("../assets/heads.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
   animation-name: spin;
   animation-iteration-count: 2;
   animation-duration: 1s;
@@ -69,22 +168,48 @@ button {
 
 @keyframes spin {
   0% {
-    background: url("../assets/heads.png");
+    background-image: url("../assets/heads.png");
   }
 
   25% {
-    background: url("../assets/tails.png");
+    background-image: url("../assets/tails.png");
   }
 
   50% {
-    background: url("../assets/heads.png");
+    background-image: url("../assets/heads.png");
   }
 
   75% {
-    background: url("../assets/tails.png");
+    background-image: url("../assets/tails.png");
   }
 
   100% {
-    background: url("../assets/heads.png");
+    background-image: url("../assets/heads.png");
+  }
+}
+
+/* 
+
+
+ */
+/* Behavior for laptops and larger devices */
+@media screen and (min-width: 768px) {
+  .selection-container,
+  .score-container {
+    flex-direction: row;
+  }
+
+  .asset-container > figure {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .choice-container > div {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .choice-container > div > button {
+    width: 30%;
   }
 }
